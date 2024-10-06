@@ -3,266 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makis centro</title>
+    <title>Makis Centro - Menú</title>
     <style>
-        /* Estilos generales para el cuerpo */
+        /* Estilo base */
         body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background: linear-gradient(135deg, #fff7e6, #ffe6e6); /* Degradado vibrante */
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
-            padding: 0;
+            padding: 10px;
             color: #333;
         }
-
-        /* Contenedor del menú */
-        .menu-container {
-            max-width: 800px;
-            margin: 100px auto 20px; 
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
-            border-radius: 20px;
-            border: 2px solid #E53935; /* Borde más marcado */
-            transition: transform 0.3s; /* Transición al hover */
-        }
-
-        .menu-container:hover {
-            transform: scale(1.02); /* Efecto de escala al hover */
-        }
-
-        /* Encabezados */
-        h1, h2 {
-            text-align: center;
-            color: #E53935; /* Color vibrante */
-            margin-bottom: 10px;
-        }
-
         h1 {
-            font-size: 3em; /* Tamaño aumentado */
-            font-weight: bold;
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra en el texto */
-        }
-
-        h2 {
-            font-size: 2.5em; 
-            margin-top: 20px;
-            padding-bottom: 10px;
-            border-bottom: 4px solid #E53935; /* Línea más gruesa */
-            color: #E53935; 
-        }
-
-        /* Estilo de las listas */
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        li {
-            padding: 15px; 
-            border-bottom: 1px solid #ddd;
-            font-size: 1.3em; /* Aumento de tamaño */
-            transition: background 0.3s; 
-        }
-
-        li:hover {
-            background: #ffebcc; /* Fondo al pasar el mouse */
-            color: #E53935; /* Color del texto al pasar el mouse */
-            font-weight: bold; /* Hacer el texto más destacado */
-        }
-
-        /* Precios */
-        .price {
-            float: right;
-            font-weight: bold;
-            color: #FF5722; /* Color vibrante para precios */
-            font-size: 1.2em; /* Tamaño de fuente aumentado */
-        }
-
-        .category {
-            margin-top: 30px;
-            padding-top: 10px;
-        }
-
-        /* Barra de navegación fija */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #E53935; 
-            color: white;
-            padding: 20px; /* Aumento de padding */
             text-align: center;
-            font-size: 1.5em; /* Aumento de tamaño */
-            z-index: 1000; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+            color: #444;
+            margin-bottom: 20px;
         }
-
-        /* Icono del menú (hamburguesa) */
-        .menu-icon {
-            font-size: 2em;
-            cursor: pointer;
-            display: none; 
+        .menu-section {
+            margin-bottom: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 25px; /* Aumento de padding */
-            transition: background 0.3s; 
-            border-radius: 5px; /* Bordes redondeados */
+        .menu-section h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            padding: 10px 0;
         }
-
-        nav a:hover {
-            background: rgba(255, 255, 255, 0.2); /* Fondo al pasar el mouse */
-            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.3); /* Sombra al hover */
-        }
-
-        /* Estilos para el menú desplegable */
         .menu-items {
-            display: none; 
-            flex-direction: column;
-            width: 100%;
-            background-color: #E53935;
+            padding: 10px 0;
+        }
+        .menu-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item span {
+            font-weight: bold;
+            float: right;
+        }
+
+        /* Estilo del botón de contacto */
+        .whatsapp {
+            margin-top: 20px;
             text-align: center;
         }
-
-        .menu-items a {
-            padding: 15px 0;
-            border-bottom: 1px solid white;
-            width: 100%;
+        .whatsapp a {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
         }
 
-        /* Botón en móviles */
-        .menu-button {
-            display: none;
-            font-size: 1.5em;
-        }
-
-        /* Adaptación para dispositivos móviles */
+        /* Diseño para pantallas más pequeñas */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
+            h1 {
+                font-size: 24px;
             }
-
-            .menu-icon {
-                display: block; 
-            }
-
-            .menu-items {
-                display: none; 
-                width: 100%;
-            }
-
-            nav a {
-                padding: 10px 0;
+            .menu-item {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
+    <h1>Makis Centro - Menú</h1>
 
-<!-- Barra de navegación fija con menú desplegable -->
-<nav>
-    <span class="menu-icon" onclick="toggleMenu()">&#9776;</span> 
-    <div class="menu-items" id="menuItems">
-        <a href="#makis">Makis</a>
-        <a href="#yakimeshi">Yakimeshi</a>
-        <a href="#gohan">Gohan</a>
-        <a href="#kushiages">Kushiages</a>
-        <a href="#bebidas">Bebidas</a>
-    </div>
-</nav>
-
-<div class="menu-container">
-    <h1>Makis centro</h1>
-
-    <div class="category" id="makis">
+    <!-- Sección MAKIS -->
+    <div class="menu-section">
         <h2>MAKIS</h2>
-        <ul>
-            <li>California Empanizado: Queso filadelfia, aguacate, pepino, camarón empanizado, encima aderezo tampico y ajonjolí. <span class="price">$67.00</span></li>
-            <li>California Especial: Mazago por fuera, por dentro pepino, aguacate y camarón, encima ajonjolí. <span class="price">$69.00</span></li>
-            <li>Filadelfia Normal: Salmón, queso filadelfia, encima ajonjolí. <span class="price">$61.00</span></li>
-            <li>Filadelfia Especial: Mazago por fuera, por dentro salmón y queso filadelfia, encima ajonjolí. <span class="price">$68.00</span></li>
-            <li>Quesos: Queso manchego, queso filadelfia, camarón o salmón, empanizado, encima aderezo tampico y ajonjolí. <span class="price">$70.00</span></li>
-            <li>XT: Doble alga marina, queso filadelfia, aguacate, pepino, camarón, mazago, pulpo, salmón y cangrejo. <span class="price">$123.00</span></li>
-            <li>Ángel: Queso filadelfia por fuera, por dentro aguacate y una brocheta de camarón, encima ajonjolí. <span class="price">$76.00</span></li>
-            <li>Emperador: Aguacate por fuera, por dentro queso manchego y camarón, encima ajonjolí. <span class="price">$73.00</span></li>
-            <li>Coliseo: Anguila por fuera, por dentro queso filadelfia, aguacate y camarón, encima salsa de anguila. <span class="price">$87.00</span></li>
-            <li>Náufrago: Salmón, queso filadelfia por fuera, por dentro aguacate, pepino, verduras y camarón. <span class="price">$78.00</span></li>
-            <li>Paris: Arroz de yakimeshi, queso filadelfia y pulpo, encima ajonjolí. <span class="price">$68.00</span></li>
-        </ul>
+        <div class="menu-items">
+            <div class="menu-item">California Empanizado: Queso filadelfia, aguacate, pepino, camarón empanizado, encima aderezo tampico y ajonjolí. <span>$67.00</span></div>
+            <div class="menu-item">California Especial: Mazago por fuera, por dentro pepino, aguacate y camarón, encima ajonjolí. <span>$69.00</span></div>
+            <div class="menu-item">Filadelfia Normal: Salmón, queso filadelfia, encima ajonjolí. <span>$61.00</span></div>
+            <div class="menu-item">Filadelfia Especial: Mazago por fuera, por dentro salmón y queso filadelfia, encima ajonjolí. <span>$68.00</span></div>
+            <div class="menu-item">Quesos: Queso manchego, queso filadelfia, camarón o salmón, empanizado, encima aderezo tampico y ajonjolí. <span>$70.00</span></div>
+            <div class="menu-item">XT: Doble alga marina, queso filadelfia, aguacate, pepino, camarón, mazago, pulpo, salmón y cangrejo. <span>$123.00</span></div>
+            <div class="menu-item">Ángel: Queso filadelfia por fuera, por dentro aguacate y una brocheta de camarón, encima ajonjolí. <span>$76.00</span></div>
+            <div class="menu-item">Emperador: Aguacate por fuera, por dentro queso manchego y camarón, encima ajonjolí. <span>$73.00</span></div>
+            <div class="menu-item">Coliseo: Anguila por fuera, por dentro queso filadelfia, aguacate y camarón, encima salsa de anguila. <span>$87.00</span></div>
+            <div class="menu-item">Náufrago: Salmón, queso filadelfia por fuera, por dentro aguacate, pepino, verduras y camarón. <span>$78.00</span></div>
+            <div class="menu-item">Paris: Arroz de yakimeshi, queso filadelfia y pulpo, encima ajonjolí. <span>$68.00</span></div>
+        </div>
     </div>
 
-    <div class="category" id="yakimeshi">
+    <!-- Sección YAKIMESHI -->
+    <div class="menu-section">
         <h2>YAKIMESHI</h2>
-        <ul>
-            <li>Camarón: Arroz frito en mantequilla y verduras finamente picadas. <span class="price">$65.00</span></li>
-            <li>Pollo: Arroz frito en mantequilla y verduras finamente picadas. <span class="price">$57.00</span></li>
-            <li>Res: Arroz frito en mantequilla y verduras finamente picadas. <span class="price">$57.00</span></li>
-            <li>Mixto: Camarón-pollo, res-pollo o camarón-res. <span class="price">$65.00</span></li>
-            <li>3 Carnes: Camarón, pollo y res. <span class="price">$98.00</span></li>
-            <li>Yakimeshi Especial <span class="price">$75.00</span> / <span class="price">$132.00</span></li>
-            <li>Yaki-sen: Camarón, pollo, res, queso manchego, verduras, cebollín y 2 brochetas de camarón con queso. Adornado con queso filadelfia, aguacate y aderezo tampico. <span class="price">$75.00</span></li>
-        </ul>
+        <div class="menu-items">
+            <div class="menu-item">Camarón: Arroz frito en mantequilla y verduras finamente picadas. <span>$65.00</span></div>
+            <div class="menu-item">Pollo: Arroz frito en mantequilla y verduras finamente picadas. <span>$57.00</span></div>
+            <div class="menu-item">Res: Arroz frito en mantequilla y verduras finamente picadas. <span>$57.00</span></div>
+            <div class="menu-item">Mixto: Camarón-pollo, res-pollo o camarón-res. <span>$65.00</span></div>
+            <div class="menu-item">3 Carnes: Camarón, pollo y res. <span>$98.00</span></div>
+            <div class="menu-item">Yakimeshi Especial <span>$75.00/$132.00</span></div>
+            <div class="menu-item">Yaki-sen: Camarón, pollo, res, queso manchego, verduras, cebollín y 2 brochetas de camarón con queso. <span>$75.00</span></div>
+        </div>
     </div>
 
-    <div class="category" id="gohan">
+    <!-- Sección GOHAN -->
+    <div class="menu-section">
         <h2>GOHAN</h2>
-        <ul>
-            <li>Natural: Arroz al vapor. <span class="price">$32.00</span></li>
-            <li>Condimento de Camarón <span class="price">$45.00</span></li>
-            <li>Condimento de Salmón <span class="price">$45.00</span></li>
-            <li>Res: Adornado con aguacate, cebollín y chiles toreados. <span class="price">$55.00</span></li>
-            <li>Pollo: Adornado con aguacate, cebollín y chiles toreados. <span class="price">$55.00</span></li>
-            <li>Camarón: Adornado con aguacate, cebollín y chiles toreados. <span class="price">$65.00</span></li>
-            <li>Especial de Res: Res cruda, adornado con cebollín y chiles toreados. <span class="price">$65.00</span></li>
-        </ul>
+        <div class="menu-items">
+            <div class="menu-item">Natural: Arroz al vapor. <span>$32.00</span></div>
+            <div class="menu-item">Condimento de Camarón <span>$45.00</span></div>
+            <div class="menu-item">Condimento de Salmón <span>$45.00</span></div>
+            <div class="menu-item">Res: Adornado con aguacate, cebollín y chiles toreados. <span>$55.00</span></div>
+            <div class="menu-item">Pollo: Adornado con aguacate, cebollín y chiles toreados. <span>$55.00</span></div>
+            <div class="menu-item">Camarón: Adornado con aguacate, cebollín y chiles toreados. <span>$65.00</span></div>
+            <div class="menu-item">Especial de Res: Res cruda, adornado con cebollín y chiles toreados. <span>$65.00</span></div>
+        </div>
     </div>
 
-    <div class="category" id="kushiages">
+    <!-- Sección KUSHIAGES -->
+    <div class="menu-section">
         <h2>KUSHIAGES</h2>
-        <ul>
-            <li>Queso Manchego <span class="price">$27.00</span></li>
-            <li>Camarón <span class="price">$27.00</span></li>
-            <li>Pollo <span class="price">$25.00</span></li>
-            <li>Res <span class="price">$25.00</span></li>
-            <li>Queso Filadelfia <span class="price">$27.00</span></li>
-            <li>Camarón con Queso <span class="price">$30.00</span></li>
-            <li>Pollo con Queso <span class="price">$28.00</span></li>
-            <li>Res con Queso <span class="price">$28.00</span></li>
-        </ul>
+        <div class="menu-items">
+            <div class="menu-item">Queso Manchego <span>$27.00</span></div>
+            <div class="menu-item">Camarón <span>$27.00</span></div>
+            <div class="menu-item">Pollo <span>$25.00</span></div>
+            <div class="menu-item">Res <span>$25.00</span></div>
+            <div class="menu-item">Queso Filadelfia <span>$27.00</span></div>
+            <div class="menu-item">Camarón con Queso <span>$30.00</span></div>
+            <div class="menu-item">Pollo con Queso <span>$28.00</span></div>
+            <div class="menu-item">Res con Queso <span>$28.00</span></div>
+        </div>
     </div>
 
-    <div class="category" id="bebidas">
+    <!-- Sección BEBIDAS -->
+    <div class="menu-section">
         <h2>BEBIDAS</h2>
-        <ul>
-            <li>Calpico <span class="price">$22.00</span></li>
-            <li>Refrescos <span class="price">$23.00</span></li>
-            <li>Fuze Tea <span class="price">$25.00</span></li>
-            <li>Coca-Cola <span class="price">$23.00</span></li>
-            <li>Aderezos <span class="price">$15.00</span></li>
-        </ul>
+        <div class="menu-items">
+            <div class="menu-item">Calpico <span>$22.00</span></div>
+            <div class="menu-item">Refrescos <span>$23.00</span></div>
+            <div class="menu-item">Fuze Tea <span>$25.00</span></div>
+            <div class="menu-item">Coca-Cola <span>$23.00</span></div>
+            <div class="menu-item">Aderezos <span>$15.00</span></div>
+        </div>
     </div>
 
-</div>
-
-<script>
-    // Función para desplegar/ocultar el menú en móviles
-    function toggleMenu() {
-        var menu = document.getElementById("menuItems");
-        if (menu.style.display === "block") {
-            menu.style.display = "none";
-        } else {
-            menu.style.display = "block";
-        }
-    }
-</script>
-
+    <!-- Contacto -->
+    <div class="whatsapp">
+        <a href="https://wa.me/4433630368" target="_blank">WhatsApp: 4433630368</a>
+    </div>
 </body>
 </html>
