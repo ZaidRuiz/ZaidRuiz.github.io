@@ -38,6 +38,7 @@
             padding: 10px 0;
             border-bottom: 1px solid #eee;
             font-size: 16px;
+            cursor: pointer;
         }
         .menu-item:last-child {
             border-bottom: none;
@@ -45,6 +46,14 @@
         .menu-item span {
             font-weight: bold;
             float: right;
+        }
+
+        /* Estilo para la descripción oculta */
+        .menu-item-description {
+            display: none;
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
         }
 
         /* Estilo del botón de contacto */
@@ -80,17 +89,26 @@
     <div class="menu-section">
         <h2>MAKIS</h2>
         <div class="menu-items">
-            <div class="menu-item">California Empanizado: Queso filadelfia, aguacate, pepino, camarón empanizado, encima aderezo tampico y ajonjolí. <span>$67.00</span></div>
-            <div class="menu-item">California Especial: Mazago por fuera, por dentro pepino, aguacate y camarón, encima ajonjolí. <span>$69.00</span></div>
-            <div class="menu-item">Filadelfia Normal: Salmón, queso filadelfia, encima ajonjolí. <span>$61.00</span></div>
-            <div class="menu-item">Filadelfia Especial: Mazago por fuera, por dentro salmón y queso filadelfia, encima ajonjolí. <span>$68.00</span></div>
-            <div class="menu-item">Quesos: Queso manchego, queso filadelfia, camarón o salmón, empanizado, encima aderezo tampico y ajonjolí. <span>$70.00</span></div>
-            <div class="menu-item">XT: Doble alga marina, queso filadelfia, aguacate, pepino, camarón, mazago, pulpo, salmón y cangrejo. <span>$123.00</span></div>
-            <div class="menu-item">Ángel: Queso filadelfia por fuera, por dentro aguacate y una brocheta de camarón, encima ajonjolí. <span>$76.00</span></div>
-            <div class="menu-item">Emperador: Aguacate por fuera, por dentro queso manchego y camarón, encima ajonjolí. <span>$73.00</span></div>
-            <div class="menu-item">Coliseo: Anguila por fuera, por dentro queso filadelfia, aguacate y camarón, encima salsa de anguila. <span>$87.00</span></div>
-            <div class="menu-item">Náufrago: Salmón, queso filadelfia por fuera, por dentro aguacate, pepino, verduras y camarón. <span>$78.00</span></div>
-            <div class="menu-item">Paris: Arroz de yakimeshi, queso filadelfia y pulpo, encima ajonjolí. <span>$68.00</span></div>
+            <div class="menu-item">
+                California Empanizado <span>$67.00</span>
+                <div class="menu-item-description">Queso filadelfia, aguacate, pepino, camarón empanizado, encima aderezo tampico y ajonjolí.</div>
+            </div>
+            <div class="menu-item">
+                California Especial <span>$69.00</span>
+                <div class="menu-item-description">Mazago por fuera, por dentro pepino, aguacate y camarón, encima ajonjolí.</div>
+            </div>
+            <div class="menu-item">
+                Filadelfia Normal <span>$61.00</span>
+                <div class="menu-item-description">Salmón, queso filadelfia, encima ajonjolí.</div>
+            </div>
+            <div class="menu-item">
+                Filadelfia Especial <span>$68.00</span>
+                <div class="menu-item-description">Mazago por fuera, por dentro salmón y queso filadelfia, encima ajonjolí.</div>
+            </div>
+            <div class="menu-item">
+                Quesos <span>$70.00</span>
+                <div class="menu-item-description">Queso manchego, queso filadelfia, camarón o salmón, empanizado, encima aderezo tampico y ajonjolí.</div>
+            </div>
         </div>
     </div>
 
@@ -98,13 +116,18 @@
     <div class="menu-section">
         <h2>YAKIMESHI</h2>
         <div class="menu-items">
-            <div class="menu-item">Camarón: Arroz frito en mantequilla y verduras finamente picadas. <span>$65.00</span></div>
-            <div class="menu-item">Pollo: Arroz frito en mantequilla y verduras finamente picadas. <span>$57.00</span></div>
-            <div class="menu-item">Res: Arroz frito en mantequilla y verduras finamente picadas. <span>$57.00</span></div>
-            <div class="menu-item">Mixto: Camarón-pollo, res-pollo o camarón-res. <span>$65.00</span></div>
-            <div class="menu-item">3 Carnes: Camarón, pollo y res. <span>$98.00</span></div>
-            <div class="menu-item">Yakimeshi Especial <span>$75.00/$132.00</span></div>
-            <div class="menu-item">Yaki-sen: Camarón, pollo, res, queso manchego, verduras, cebollín y 2 brochetas de camarón con queso. <span>$75.00</span></div>
+            <div class="menu-item">
+                Camarón <span>$65.00</span>
+                <div class="menu-item-description">Arroz frito en mantequilla y verduras finamente picadas.</div>
+            </div>
+            <div class="menu-item">
+                Pollo <span>$57.00</span>
+                <div class="menu-item-description">Arroz frito en mantequilla y verduras finamente picadas.</div>
+            </div>
+            <div class="menu-item">
+                Res <span>$57.00</span>
+                <div class="menu-item-description">Arroz frito en mantequilla y verduras finamente picadas.</div>
+            </div>
         </div>
     </div>
 
@@ -112,40 +135,14 @@
     <div class="menu-section">
         <h2>GOHAN</h2>
         <div class="menu-items">
-            <div class="menu-item">Natural: Arroz al vapor. <span>$32.00</span></div>
-            <div class="menu-item">Condimento de Camarón <span>$45.00</span></div>
-            <div class="menu-item">Condimento de Salmón <span>$45.00</span></div>
-            <div class="menu-item">Res: Adornado con aguacate, cebollín y chiles toreados. <span>$55.00</span></div>
-            <div class="menu-item">Pollo: Adornado con aguacate, cebollín y chiles toreados. <span>$55.00</span></div>
-            <div class="menu-item">Camarón: Adornado con aguacate, cebollín y chiles toreados. <span>$65.00</span></div>
-            <div class="menu-item">Especial de Res: Res cruda, adornado con cebollín y chiles toreados. <span>$65.00</span></div>
-        </div>
-    </div>
-
-    <!-- Sección KUSHIAGES -->
-    <div class="menu-section">
-        <h2>KUSHIAGES</h2>
-        <div class="menu-items">
-            <div class="menu-item">Queso Manchego <span>$27.00</span></div>
-            <div class="menu-item">Camarón <span>$27.00</span></div>
-            <div class="menu-item">Pollo <span>$25.00</span></div>
-            <div class="menu-item">Res <span>$25.00</span></div>
-            <div class="menu-item">Queso Filadelfia <span>$27.00</span></div>
-            <div class="menu-item">Camarón con Queso <span>$30.00</span></div>
-            <div class="menu-item">Pollo con Queso <span>$28.00</span></div>
-            <div class="menu-item">Res con Queso <span>$28.00</span></div>
-        </div>
-    </div>
-
-    <!-- Sección BEBIDAS -->
-    <div class="menu-section">
-        <h2>BEBIDAS</h2>
-        <div class="menu-items">
-            <div class="menu-item">Calpico <span>$22.00</span></div>
-            <div class="menu-item">Refrescos <span>$23.00</span></div>
-            <div class="menu-item">Fuze Tea <span>$25.00</span></div>
-            <div class="menu-item">Coca-Cola <span>$23.00</span></div>
-            <div class="menu-item">Aderezos <span>$15.00</span></div>
+            <div class="menu-item">
+                Natural <span>$32.00</span>
+                <div class="menu-item-description">Arroz al vapor.</div>
+            </div>
+            <div class="menu-item">
+                Condimento de Camarón <span>$45.00</span>
+                <div class="menu-item-description">Adornado con aguacate, cebollín y chiles toreados.</div>
+            </div>
         </div>
     </div>
 
@@ -153,5 +150,21 @@
     <div class="whatsapp">
         <a href="https://wa.me/4433630368" target="_blank">WhatsApp: 4433630368</a>
     </div>
+
+    <!-- Script para acordeón -->
+    <script>
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const description = item.querySelector('.menu-item-description');
+                if (description.style.display === 'block') {
+                    description.style.display = 'none';
+                } else {
+                    description.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
